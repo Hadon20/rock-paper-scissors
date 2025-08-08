@@ -4,11 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
 </head>
 
 <body>
-    <script src="dist/scripts.js"></script>
+    <h1 class="title">Rock Paper Scissors</h1>
+    <div class="info-table">
+        <p class="info-rounds">Rounds: 0</p>
+        <div class="score-table">
+            <p class="score-human">You: 0</p>
+            <p class="score-computer">Computer: 0</p>
+        </div>
+    </div>
+    <div class="game-container">
+        <div class="player-hand">
+            <p class="player-hand-title">Your Choice</p>
+            <div class="img-div-player"></div>
+        </div>
+        <div class="separator"></div>
+        <div class="computer-hand">
+            <p class="computer-hand-title">Computer Choice</p>
+            <div class="img-div-computer"></div>
+        </div>
+    </div>
+    <div class="player-zone">
+        <p id="player-zone-title">These are your options</p>
+        <div class="buttons">
+            <button class="button rock">
+                <img id="rock" src="resources/rock-on-svgrepo-com.svg" alt="rock">
+            </button>
+            <button class="button paper">
+                <img id="paper" src="resources/paper-plane-svgrepo-com.svg" alt="paper">
+            </button>
+            <button class="button scissors">
+                <img id="scissors" src="resources/scissors-svgrepo-com.svg" alt="scissors">
+            </button>
+        </div>
+    </div>
+    <div class="choices"></div>
+
+    <script type="module" src="src/main.ts"></script>
 </body>
 
 </html>
