@@ -66,11 +66,11 @@ function getImgPath(choice: Choice) {
 
     switch (choice) {
         case 'rock':
-            return 'resources/rock-on-svgrepo-com.svg'
+            return '/public/resources/rock-on-svgrepo-com.svg'
         case 'paper':
-            return 'resources/paper-plane-svgrepo-com.svg'
+            return '/public/resources/paper-plane-svgrepo-com.svg'
         case 'scissors':
-            return 'resources/scissors-svgrepo-com.svg'
+            return '/public/resources/scissors-svgrepo-com.svg'
     }
 }
 
