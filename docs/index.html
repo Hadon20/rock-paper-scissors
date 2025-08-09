@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-  <script type="module" crossorigin src="/rock-paper-scissors/assets/index-HGn_4F0o.js"></script>
-  <link rel="stylesheet" crossorigin href="/rock-paper-scissors/assets/index-BoSt5C6O.css">
+  <script type="module" crossorigin src="/rock-paper-scissors/assets/index-C4pfe9k4.js"></script>
+  <link rel="stylesheet" crossorigin href="/rock-paper-scissors/assets/index-CfhxS27r.css">
 </head>
 
 <body>
     <h1 class="title">Rock Paper Scissors</h1>
-    <div class="info-table">
-        <p class="info-rounds">Rounds: 0</p>
-        <div class="score-table">
-            <p class="score-human">You: 0</p>
-            <p class="score-computer">Computer: 0</p>
+    <div class="info-container">
+        <div class="info-table">
+            <p class="info-rounds">Rounds: 0</p>
+            <div class="score-table">
+                <p class="score-human">You: 0</p>
+                <p class="score-computer">Computer: 0</p>
+            </div>
         </div>
+        <button class="new-game-button">New Game</button>
     </div>
     <div class="game-container">
         <div class="player-hand">
@@ -33,13 +36,13 @@
         <p id="player-zone-title">These are your options</p>
         <div class="buttons">
             <button class="button rock">
-                <img id="rock" src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M18.9999%2016L19.8692%204.26538C19.9448%203.24523%2019.275%202.31876%2018.2826%202.07066C17.0656%201.76642%2015.8548%202.58884%2015.689%203.83225L15%209'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M8%2011L7.28683%206.72097C7.12131%205.72788%206.26208%205%205.25529%205C4.0442%205%203.09454%206.03991%203.20418%207.24603L4%2016'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M12%2013V11.5C12%2010.3954%2011.1046%209.5%2010%209.5C8.89543%209.5%208%2010.3954%208%2011.5V15'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M16%2013V11C16%209.89543%2015.1046%209%2014%209C12.8954%209%2012%209.89543%2012%2011V13'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M19%2016C18.4643%2020%2015.6421%2022%2011.5%2022C7.35786%2022%204%2020%204%2016'%20stroke='%23000000'%20stroke-width='2'/%3e%3cpath%20d='M13.6923%2017H11C9.89543%2017%209%2016.1046%209%2015C9%2013.8954%209.89543%2013%2011%2013L15%2013C17.2091%2013%2019.5%2015%2018.5%2018'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="rock">
+                <img id="rock" src="resources/rock-on-svgrepo-com.svg" alt="rock">
             </button>
             <button class="button paper">
-                <img id="paper" src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Communication%20/%20Paper_Plane'%3e%3cpath%20id='Vector'%20d='M10.3078%2013.6923L15.1539%208.84619M20.1113%205.88867L16.0207%2019.1833C15.6541%2020.3747%2015.4706%2020.9707%2015.1544%2021.1683C14.8802%2021.3396%2014.5406%2021.3683%2014.2419%2021.2443C13.8975%2021.1014%2013.618%2020.5433%2013.0603%2019.428L10.4694%2014.2461C10.3809%2014.0691%2010.3366%2013.981%2010.2775%2013.9043C10.225%2013.8363%2010.1645%2013.7749%2010.0965%2013.7225C10.0215%2013.6647%209.93486%2013.6214%209.76577%2013.5369L4.57192%2010.9399C3.45662%2010.3823%202.89892%2010.1032%202.75601%209.75879C2.63207%209.4601%202.66033%209.12023%202.83169%208.84597C3.02928%208.52974%203.62523%208.34603%204.81704%207.97932L18.1116%203.88867C19.0486%203.60038%2019.5173%203.45635%2019.8337%203.57253C20.1094%203.67373%2020.3267%203.89084%2020.4279%204.16651C20.544%204.48283%2020.3999%204.95126%2020.1119%205.88729L20.1113%205.88867Z'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e" alt="paper">
+                <img id="paper" src="resources/paper-plane-svgrepo-com.svg" alt="paper">
             </button>
             <button class="button scissors">
-                <img id="scissors" src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='6.5'%20cy='6.5'%20r='2.5'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3ccircle%20cx='6.5'%20cy='17.5'%20r='2.5'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M6%2014.9999L20%206.26758'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M12.6985%2011.9995L6.52936%208.15153C6.06076%207.85925%205.44394%208.00218%205.15166%208.47078C4.85937%208.93939%205.0023%209.55621%205.47091%209.84849L10.809%2013.1781L12.6985%2011.9995ZM14.5881%2013.1781L12.6985%2014.3566L19.4709%2018.5809C19.9395%2018.8731%2020.5564%2018.7302%2020.8486%2018.2616C21.1409%2017.793%2020.998%2017.1762%2020.5294%2016.8839L14.5881%2013.1781Z'%20fill='%23000000'/%3e%3c/svg%3e" alt="scissors">
+                <img id="scissors" src="resources/scissors-svgrepo-com.svg" alt="scissors">
             </button>
         </div>
     </div>

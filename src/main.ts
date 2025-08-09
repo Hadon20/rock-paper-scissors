@@ -1,34 +1,20 @@
 import { delay, disableButtons } from "./utils/helper.js"
 
-console.log(delay, disableButtons)
+type Choice = 'rock' | 'paper' | 'scissors';
 
 let humanScore: number = 0
 let computerScore: number = 0
 let gameMessage = document.querySelector('#player-zone-title') as HTMLParagraphElement
+const delayTime = 1500
 
-type Choice = 'rock' | 'paper' | 'scissors';
-
-function getComputerChoice(): Choice {
-    let computerChoice: number = Math.floor(Math.random() * 3)
-    if (computerChoice === 0) {
-        return 'rock'
-    } else if (computerChoice === 1) {
-        return 'paper'
-    } else {
-        return 'scissors'
-    }
+const imagePaths = {
+    rock: 'resources/rock-on-svgrepo-com.svg',
+    paper: 'resources/paper-plane-svgrepo-com.svg',
+    scissors: 'resources/scissors-svgrepo-com.svg'
 }
 
-function getPlayerChoice(): Promise<Choice> {
-    return new Promise((resolve) => {
-        const buttons = document.querySelectorAll('.button') as NodeListOf<HTMLButtonElement>
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const choice = (button.querySelector('img') as HTMLImageElement).id as Choice
-                resolve(choice)
-            }, { once: true })
-        })
-    })
+function getImgPath(choice: Choice) {
+    return imagePaths[choice]
 }
 
 function updateScore() {
@@ -62,18 +48,28 @@ function updateGameBoard(playerChoice: Choice, computerChoice: Choice) {
     divComputerChoice.append(imgComputerChoice)
 }
 
-function getImgPath(choice: Choice) {
-
-    switch (choice) {
-        case 'rock':
-            return '/public/resources/rock-on-svgrepo-com.svg'
-        case 'paper':
-            return '/public/resources/paper-plane-svgrepo-com.svg'
-        case 'scissors':
-            return '/public/resources/scissors-svgrepo-com.svg'
+function getComputerChoice(): Choice {
+    let computerChoice: number = Math.floor(Math.random() * 3)
+    if (computerChoice === 0) {
+        return 'rock'
+    } else if (computerChoice === 1) {
+        return 'paper'
+    } else {
+        return 'scissors'
     }
 }
 
+function getPlayerChoice(): Promise<Choice> {
+    return new Promise((resolve) => {
+        const buttons = document.querySelectorAll('.button') as NodeListOf<HTMLButtonElement>
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const choice = (button.querySelector('img') as HTMLImageElement).id as Choice
+                resolve(choice)
+            }, { once: true })
+        })
+    })
+}
 
 function playRound(playerChoice: Choice, computerChoice: Choice): 'win' | 'loss' | 'draw' {
 
@@ -102,7 +98,7 @@ async function playGame() {
     let roundsPlayed: number = 0
     gameMessage.textContent = 'Let the game begin!'
     disableButtons(true)
-    await delay(2500)
+    await delay(delayTime)
 
     while (roundsPlayed < 5) {
 
@@ -125,7 +121,7 @@ async function playGame() {
             gameMessage.textContent = 'It was a draw, let\'s go again!'
         }
 
-        await delay(2500)
+        await delay(delayTime)
     }
 
     updateRounds(roundsPlayed)
@@ -136,5 +132,18 @@ async function playGame() {
         gameMessage.textContent = 'You lost the game...'
     }
 }
+
+async function resetGame() {
+    humanScore = 0
+    computerScore = 0
+    updateScore()
+    updateRounds(0)
+    gameMessage.textContent = 'Game Reset - Starting New Game'
+    await delay(delayTime)
+    playGame()
+}
+
+const resetButton = document.querySelector('.new-game-button') as HTMLButtonElement
+resetButton.addEventListener('click', resetGame)
 
 playGame()

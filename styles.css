@@ -28,6 +28,13 @@ body {
     box-shadow: var(--shadow);
 }
 
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    width: 40rem;
+    align-items: center;
+}
+
 .info-table {
     display: flex;
     flex-direction: column;
@@ -45,7 +52,7 @@ body {
     box-sizing: border-box;
     border-radius: 0.5rem;
     text-align: center;
-    box-shadow: var(--shadow)
+    box-shadow: var(--shadow);
 }
 
 .info-rounds {
@@ -64,6 +71,26 @@ body {
 .score-computer {
     margin: 0;
     padding: 0;
+}
+
+.new-game-button {
+    font-size: 1.3rem;
+    color: white;
+    height: fit-content;
+    background-color: var(--color-accent-green);
+    text-align: center;
+    border: 0.15rem solid white;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s, border 0.2s;
+}
+
+.new-game-button:hover {
+    color: black;
+    background-color: white;
+    border: 0.15rem solid var(--color-accent-green);
 }
 
 
